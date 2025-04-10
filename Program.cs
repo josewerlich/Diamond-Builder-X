@@ -4,10 +4,10 @@ namespace Diamond_Builder_X
 {
     internal class Program
     {
-        //Version 2: Print the middle line of the diamond based on the user input
+        //Version 3: Print the top half and the bottom half
         static void Main(string[] args)
         {
-            int diamondSize = 0;
+            int number = 0;
 
 
             while (true)
@@ -19,29 +19,43 @@ namespace Diamond_Builder_X
                 Console.WriteLine();
 
                 Console.Write("Type the size of the diamond you want to create: ");
-                diamondSize = Convert.ToInt32(Console.ReadLine());
+                number = Convert.ToInt32(Console.ReadLine());
 
-                if (diamondSize % 2 != 0)
+                if (number % 2 != 0)
                 {
-                    char[] diamondMiddleLine = new char[diamondSize];
+                    //cut diamond in a half 
+                    int diamondHalfSize = number / 2;
 
-                    for (int counter = 0; counter < diamondSize; counter++ )
+
+                    //top half
+                    for (int counter = 0; counter < diamondHalfSize; counter++)
                     {
-                        diamondMiddleLine[counter] = 'X';
+                        Console.Write(new string(' ', diamondHalfSize - counter));
+                        Console.WriteLine(new string('*', counter * 2 + 1));
                     }
-                    Console.WriteLine(new string (diamondMiddleLine)); 
+                    
+                    //center line
+                    Console.WriteLine(new string('*', number));
+                    
+             
+                    //bottom half
+                    for (int counter = diamondHalfSize -1; counter >= 0; counter--)
+                    {
+                        Console.Write(new string(' ', diamondHalfSize - counter));
+                        Console.WriteLine(new string('*', counter * 2 + 1));
+                    }
                 }
 
                 else
                 {
                     Console.WriteLine("Please type a odd number. Press Enter to restart");
-                    Console.ReadLine();
+                    
 
                 }
                 Console.ReadLine();
             }
 
-
+            
             
 
 
