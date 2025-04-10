@@ -27,7 +27,6 @@ namespace Diamond_Builder_X
                     //center line
                     ShowTheCenterLineDiamond(number);
 
-
                     //bottom half
                     ShowBottomHalfDiamond(diamondHalfSize);
                 }
@@ -36,6 +35,7 @@ namespace Diamond_Builder_X
                 {
                     Console.WriteLine("Please type a odd number. Press Enter to restart");
                 }
+                
                 string continueOption = MenuDisplayContinue();
 
                 if (continueOption != "Y")
@@ -85,7 +85,7 @@ namespace Diamond_Builder_X
         static string MenuDisplayContinue()
         {
             Console.WriteLine("***********************************");
-            Console.WriteLine("Do you want create a new diamond? (Y/N) ");
+            Console.WriteLine("Do you want to create a new diamond? (Y/N) ");
 
             string continueOption = Console.ReadLine()!.ToUpper();
 
