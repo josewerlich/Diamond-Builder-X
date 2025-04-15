@@ -29,17 +29,20 @@ namespace Diamond_Builder_X
 
                     //bottom half
                     ShowBottomHalfDiamond(diamondHalfSize);
+
+                    string continueOption = MenuDisplayContinue();
+
+                    if (continueOption != "Y")
+                        break;
                 }
 
                 else
                 {
                     Console.WriteLine("Please type a odd number. Press Enter to restart");
+                    Console.ReadLine();
                 }
                 
-                string continueOption = MenuDisplayContinue();
-
-                if (continueOption != "Y")
-                    break;
+                
 
             }
 
